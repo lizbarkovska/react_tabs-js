@@ -12,18 +12,12 @@ export const tabs = [
 
 export const App = () => {
   const [activeTabId, setActiveTabId] = useState(tabs[0].id);
-  const activeTab = tabs.find(tab => tab.id === activeTabId) || tabs[0];
-
-  if (activeTabId !== activeTab.id) {
-    setActiveTabId(tabs[0]);
-  }
 
   return (
     <Tabs
       activeTabId={activeTabId}
       onTabSelected={setActiveTabId}
       tabs={tabs}
-      activeTab={activeTab}
     />
   );
 };
